@@ -4,8 +4,10 @@
   "description": "An application to store & manage a movie collection",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "./node_modules/.bin/webpack-dev-server --config ./webpack/webpack.dev.config.js"
+    "test": "npm run testu && npm run testf && npm run lint",
+    "dev": "./node_modules/.bin/webpack-dev-server --config ./webpack/webpack.dev.config.js",
+    "testu": "cross-env NODE_ENV=test nyc mocha \"./test/unit/**/*.js*\"",
+    "testf": "node scripts/testf/testf.js test"
   },
   "repository": {
     "type": "git",
@@ -37,9 +39,12 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.26.0",
+    "cross-env": "^5.0.0",
     "css-loader": "^0.28.11",
     "less": "^2.7.3",
     "less-loader": "^4.1.0",
+    "mocha": "^5.0.0",
+    "nyc": "^11.2.1",
     "style-loader": "^0.20.3"
   },
   "babel": {
