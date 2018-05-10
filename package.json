@@ -2,7 +2,7 @@
   "name": "movie-catalog",
   "version": "1.0.0",
   "description": "An application to store & manage a movie collection",
-  "main": "src/index.jsx",
+  "main": "./src/index.js",
   "scripts": {
     "test": "npm run testu && npm run testf && npm run lint",
     "dev": "./node_modules/.bin/webpack-dev-server --config ./webpack/webpack.dev.config.js",

@@ -5,7 +5,7 @@ var parentDir = path.join(__dirname, '../src/');
 
 module.exports = {
     entry: [
-        path.join(parentDir, 'index.jsx')
+        path.join(parentDir, 'index.js')
     ],
     module: {
         loaders: [{
@@ -15,13 +15,20 @@ module.exports = {
         },
         {
             test: /\.less$/,
-            loaders: ["style-loader", "css-loder", "less-loader"]
+            loaders: ["style-loader", "css-loader", "less-loader"]
+        },
+        {
+            test: /\.css$/,
+            loader: "style-loader!css-loader"
         },
         {
             test: /\.scss$/,
             loader: 'style!css!resolve-url!sass?sourceMap'
         },
         ]
+    },
+    resolve: {
+        extensions: ['.js', '.jsx'],
     },
     output: {
         path: parentDir + '/dist',
