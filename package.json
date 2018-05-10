@@ -51,6 +51,7 @@
     "cross-env": "^5.0.0",
     "css-loader": "^0.28.11",
     "eslint": "^4.18.2",
+    "file-loader": "^1.1.11",
     "less": "^2.7.3",
     "less-loader": "^4.1.0",
     "mocha": "^5.0.0",

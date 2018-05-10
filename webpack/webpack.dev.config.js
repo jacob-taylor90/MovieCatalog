@@ -24,8 +24,7 @@ module.exports = {
         {
             test: /\.scss$/,
             loader: 'style!css!resolve-url!sass?sourceMap'
-        },
-        ]
+        }]
     },
     resolve: {
         extensions: ['.js', '.jsx'],
