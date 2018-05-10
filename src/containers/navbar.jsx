@@ -1,20 +1,31 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import {Route, NavLink, HashRouter} from 'react-router-dom';
+import Home from '../components/home';
+import AddMovie from '../components/add-movie';
+import ViewCatalog from '../components/view-catalog';
+import Account from '../components/account-pop-up';
 import '../app.css';
 
 export default class Navigation extends Component {
-    static propTypes = {
-        selected: PropTypes.func
-    };
 
     render() {
         return(
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#add">Add Movie</a></li>
-                <li><a href="#view">View Catalog</a></li>
-                <li className="right"><a href="#logIn">Log In/Sign Up</a></li>
-            </ul>
+            <HashRouter>
+                <div>
+                    <ul>
+                        <li><NavLink to="/">Home</NavLink></li>
+                        <li><NavLink to="/add">Add Movie</NavLink></li>
+                        <li><NavLink to="/view">View Catalog</NavLink></li>
+                        <li className="right"><NavLink to="/account">Log In/Sign Up</NavLink></li>
+                    </ul>
+                    <div className="content">
+                        <Route exact path="/" component={Home} />
+                        <Route path="/add" component={AddMovie} />
+                        <Route path="/view" component={ViewCatalog} />
+                        <Route path="/account" component={Account} />
+                    </div>
+                </div>
+            </HashRouter>
         );
     }
 }
