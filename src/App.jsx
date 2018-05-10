@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
+//import Navigation from './containers/navbar';
 
 export default class App extends Component {
     render() {
-        return (<p>This is my new react app</p>);
-    }
+        return (
+            //<Navigation />
+            <p>Hello World</p>
+        );
+    };
 }
